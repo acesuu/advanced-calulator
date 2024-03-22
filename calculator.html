@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<script src="calculator.js"></script>
+</head>
+<body>
+<h1>Simple Calculator</h1>
+<input type="number" id="inputA" placeholder="Enter number A">
+<input type="number" id="inputB" placeholder="Enter number B">
+<br>
+<button onclick="performOperation('add')">Add</button>
+<button onclick="performOperation('subtract')">Subtract</button>
+<button onclick="performOperation('multiply')">Multiply</button>
+<button onclick="performOperation('divide')">Divide</button>
+<button onclick="performOperation('exponentiate')">Exponentiate</button>
+<h2>Result: <span id="result"></span></h2>
+
+<script>
+// Assuming the corrected calculator.js content is correctly included above or externally
+function performOperation(operation) {
+    var a = parseFloat(document.getElementById('inputA').value);
+    var b = parseFloat(document.getElementById('inputB').value);
+    var result = 0;
+
+    try {
+        switch (operation) {
+            case 'add':
+                result = add(a, b);
+                break;
+            case 'subtract':
+                result = subtract(a, b);
+                break;
+            case 'multiply':
+                result = multiply(a, b);
+                break;
+            case 'divide':
+                result = divide(a, b);
+                break;
+            case 'exponentiate':
+                result = exponentiate(a, b);
+                break;
+        }
+        document.getElementById('result').textContent = result;
+    } catch (error) {
+        alert(error.message);
+    }
+}
+</script>
+</body>
+</html>
