@@ -34,4 +34,10 @@ function modulus(a, b) {
   return a % b;
 }
 
-module.exports = { add, subtract, multiply, divide, exponentiate, sqrt, modulus };
+function calculateCompoundInterest(P, r, n, t) {
+  const ratePerPeriod = divide(r, n);
+  const compoundFactor = exponentiate(add(1, ratePerPeriod), multiply(n, t));
+  return multiply(P, compoundFactor);
+}
+
+module.exports = { add, subtract, multiply, divide, exponentiate, sqrt, modulus, calculateCompoundInterest };

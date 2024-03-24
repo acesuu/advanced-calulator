@@ -66,6 +66,18 @@
     <h2>Result: <span id="result"></span></h2>
 </div>
 
+<div class="calculator">
+    <h1>Compound Interest Calculator</h1>
+    <input type="number" id="inputP" placeholder="Principal Amount (P)">
+    <input type="number" id="inputR" placeholder="Annual Interest Rate (r)">
+    <input type="number" id="inputN" placeholder="Times Compounded Per Year (n)">
+    <input type="number" id="inputT" placeholder="Years (t)">
+    <br>
+
+    <button onclick="performOperation2('calculateCompoundInterest')">Calculate Compound Interest</button>
+    <h2>Result: <span id="result2"></span></h2>
+</div>
+
 <script>
     // Add cases for the new sqrt and modulus functions
     function performOperation(operation) {
@@ -75,20 +87,62 @@
 
         try {
             switch (operation) {
-                // Existing cases
+                case 'add':
+                    result = add(a, b);
+                    break;
+                case 'subtract':
+                    result = subtract(a, b);
+                    break;
+                case 'multiply':
+                    result = multiply(a, b);
+                    break;
+                case 'divide':
+                    result = divide(a, b);
+                    break;
+                case 'exponentiate':
+                    result = exponentiate(a, b);
+                    break;
                 case 'sqrt':
                     result = sqrt(a);
                     break;
                 case 'modulus':
                     result = modulus(a, b);
                     break;
-                // Handle other operations...
+                case 'sqrt':
+                    result = sqrt(a);
+                    break;
+                case 'modulus':
+                    result = modulus(a, b);
+                    break;
+                default:
+                    alert("Operation not supported.");
+                    return;
             }
             document.getElementById('result').textContent = result;
         } catch (error) {
             alert(error.message);
         }
     }
+
+    function performOperation2(operation) {
+    var result = 0;
+
+    try {
+        switch (operation) {
+            case 'calculateCompoundInterest':
+                const P = parseFloat(document.getElementById('inputP').value);
+                const r = parseFloat(document.getElementById('inputR').value);
+                const n = parseFloat(document.getElementById('inputN').value);
+                const t = parseFloat(document.getElementById('inputT').value);
+                result = calculateCompoundInterest(P, r, n, t);
+                break;
+        }
+        document.getElementById('result2').textContent = result;
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
 </script>
 </body>
 
