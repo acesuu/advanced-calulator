@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide, exponentiate, sqrt, modulus } = require('./calculator');
+const { add, subtract, multiply, divide, exponentiate, sqrt, modulus, calculatePercentage } = require('./calculator');
 
 // Test suite for 'add' function
 describe('Add', () => {
@@ -110,4 +110,22 @@ describe('Modulus', () => {
             expect(modulus(a, b)).toBe(expected);
         });
     });
+});
+
+// Test suite for 'calculatePercentage' function
+describe('Calculate Percentage', () => {
+  const testData = [
+      [100, 10, 10], // 10% of 100
+      [50, 20, 10], // 20% of 50
+      [200, 15, 30], // 15% of 200
+      [100, 100, 100], // 100% of 100
+      [0, 30, 0], // 30% of 0
+      [75, 0, 0], // 0% of 75
+  ];
+
+  describe.each(testData)('calculatePercentage(%i, %i)', (value, percentage, expected) => {
+      test(`should return ${expected}`, () => {
+          expect(calculatePercentage(value, percentage)).toBe(expected);
+      });
+  });
 });

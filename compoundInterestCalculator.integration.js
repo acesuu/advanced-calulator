@@ -1,4 +1,4 @@
-const { calculateCompoundInterest } = require('./calculator'); // Adjust the path as necessary
+const { calculateCompoundInterest } = require('./calculator'); 
 
 describe('Compound Interest Calculation Integration Tests', () => {
   test('Correctly calculates compound interest for annual compounding', () => {
