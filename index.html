@@ -63,6 +63,8 @@
     <button onclick="performOperation('exponentiate')">Exponentiate</button>
     <button onclick="performOperation('sqrt')">Square Root</button> <!-- New button for square root -->
     <button onclick="performOperation('modulus')">Modulus</button> <!-- New button for modulus -->
+    <button onclick="performOperation('percentage')">Percentage</button> <!-- New button for modulus -->
+
     <h2>Result: <span id="result"></span></h2>
 </div>
 
@@ -113,6 +115,9 @@
                     break;
                 case 'modulus':
                     result = modulus(a, b);
+                    break;
+                case 'percentage':
+                    result = calculatePercentage(a, b);
                     break;
                 default:
                     alert("Operation not supported.");
