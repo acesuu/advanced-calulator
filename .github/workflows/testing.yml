@@ -20,7 +20,7 @@ jobs:
     - name: npm install
       run: npm ci
     - name: Run Unit Tests
-      run: npm run test:unit # Make sure to define the "test:unit" script in your package.json
+      run: npm run test:unit 
 
   integration_tests:
     name: Run Integration Tests
@@ -40,4 +40,4 @@ jobs:
     - name: npm install
       run: npm ci
     - name: Run Integration Tests
-      run: npm run test:integration # Define the "test:integration" script in your package.json
+      run: npm run test:integration 
