@@ -39,5 +39,9 @@ function calculateCompoundInterest(P, r, n, t) {
   const compoundFactor = exponentiate(add(1, ratePerPeriod), multiply(n, t));
   return multiply(P, compoundFactor);
 }
+function calculatePercentage(value, percentage) {
+  return (value * percentage) / 100;
+}
 
-module.exports = { add, subtract, multiply, divide, exponentiate, sqrt, modulus, calculateCompoundInterest };
+
+module.exports = { add, subtract, multiply, divide, exponentiate, sqrt, modulus, calculateCompoundInterest, calculatePercentage };
